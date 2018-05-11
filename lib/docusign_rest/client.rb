@@ -682,10 +682,12 @@ module DocusignRest
           }
         }
       end
+
       template_hash = {
         sequence: sequence,
         recipients: {
-          signers: signers_array,
+					#signers: signers_array,
+          signers: get_signers(signers),
           carbonCopies: get_carbon_copies(carbon_copies, signers.size)
         }
       }
